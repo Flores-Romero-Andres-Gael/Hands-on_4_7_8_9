@@ -6,27 +6,48 @@ import java.util.ArrayList;
 public class Multiple{
 
     public static void main(String[] args) {
-        ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
-        //ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Chemical());
-        OPERATIONS(Datos);
+        int a = 1;
+
+        if (a == 1){
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
+            OPERATIONS(Datos, a);
+        }else {
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Chemical());
+            OPERATIONS(Datos, a);
+        }
+
     }
 
-    public static void OPERATIONS(ArrayList<DatosVariables> Datos){
+    public static void OPERATIONS(ArrayList<DatosVariables> Datos, int flag){
         int Filas = Datos.size();
-        int Columns = 4;
-        //int Columns = 3;
+        int Columns = 0;
+
+        if(flag==1){
+            Columns = 4;
+        }else{
+            Columns = 3;
+        }
 
         double [][] MatrizX = new double[Filas][Columns];
         double [][] MatrizY = new double[Filas][1];
         double [][] TranspuestaX = new double[MatrizX[0].length][MatrizX.length];
 
+        if (Columns == 4){
+            for (int i = 0; i < Filas; i++) {
+                MatrizX[i][0] = Datos.get(i).x;
+                MatrizX[i][1] = Datos.get(i).x1;
+                MatrizX[i][2] = Datos.get(i).x2;
+                MatrizX[i][3] = Datos.get(i).x3;
+                MatrizY[i][0] = Datos.get(i).y;
+            }
 
-        for (int i = 0; i < Filas; i++) {
-            MatrizX[i][0] = Datos.get(i).x;
-            MatrizX[i][1] = Datos.get(i).x1;
-            MatrizX[i][2] = Datos.get(i).x2;
-            MatrizX[i][3] = Datos.get(i).x3;
-            MatrizY[i][0] = Datos.get(i).y;
+        }else{
+            for (int i = 0; i < Filas; i++) {
+                MatrizX[i][0] = Datos.get(i).x;
+                MatrizX[i][1] = Datos.get(i).x1;
+                MatrizX[i][2] = Datos.get(i).x2;
+                MatrizY[i][0] = Datos.get(i).y;
+            }
         }
 
         System.out.println("Matriz X: ");

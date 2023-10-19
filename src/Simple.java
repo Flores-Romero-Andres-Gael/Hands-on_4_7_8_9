@@ -6,9 +6,15 @@ import java.util.ArrayList;
 public class Simple {
 
     public static void main(String[] args) {
-        ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.DatosBenetton());
-        //ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50StartUps());
-        OPERATIONS(Datos);
+        int a = 1;
+
+        if (a == 1){
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
+            OPERATIONS(Datos);
+        }else {
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Chemical());
+            OPERATIONS(Datos);
+        }
     }
 
     public static void OPERATIONS(ArrayList<DatosVariables> Datos){
