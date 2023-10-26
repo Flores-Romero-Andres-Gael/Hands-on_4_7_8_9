@@ -29,6 +29,12 @@ public class DatosVariables {
         this.y = y;
     }
 
+    public DatosVariables(double x, double x1,double y){
+        this.x = x;
+        this.x1 = x1;
+        this.y = y;
+    }
+
 
     public static ArrayList<DatosVariables> DatosBenetton() {
         Datos.add(new DatosVariables(23, 0, 0, 0, 651));
@@ -186,6 +192,38 @@ public class DatosVariables {
         Datos.add(new DatosVariables(1, 3));
         Datos.add(new DatosVariables(2, 6));
         Datos.add(new DatosVariables(3, 14));
+
+        return Datos;
+    }
+
+    public static ArrayList<DatosVariables> Polynomial(){
+
+        Datos.add(new DatosVariables(1, 108, 95));
+        Datos.add(new DatosVariables(1, 115, 96));
+        Datos.add(new DatosVariables(1, 106, 95));
+        Datos.add(new DatosVariables(1, 97, 97));
+        Datos.add(new DatosVariables(1, 95, 93));
+        Datos.add(new DatosVariables(1, 91, 94));
+        Datos.add(new DatosVariables(1, 97, 95));
+        Datos.add(new DatosVariables(1, 83, 93));
+        Datos.add(new DatosVariables(1, 83, 92));
+        Datos.add(new DatosVariables(1, 78, 86));
+        Datos.add(new DatosVariables(1, 54, 73));
+        Datos.add(new DatosVariables(1, 67, 80));
+        Datos.add(new DatosVariables(1, 56, 65));
+        Datos.add(new DatosVariables(1, 53, 69));
+        Datos.add(new DatosVariables(1, 61, 77));
+        Datos.add(new DatosVariables(1, 115, 96));
+        Datos.add(new DatosVariables(1, 81, 87));
+        Datos.add(new DatosVariables(1, 78, 89));
+        Datos.add(new DatosVariables(1, 30, 60));
+        Datos.add(new DatosVariables(1, 45, 63));
+        Datos.add(new DatosVariables(1, 99, 95));
+        Datos.add(new DatosVariables(1, 32, 61));
+        Datos.add(new DatosVariables(1, 25, 55));
+        Datos.add(new DatosVariables(1, 28, 56));
+        Datos.add(new DatosVariables(1, 90, 94));
+        Datos.add(new DatosVariables(1, 89, 93));
 
         return Datos;
     }
