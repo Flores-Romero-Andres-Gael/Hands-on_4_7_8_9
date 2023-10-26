@@ -37,15 +37,15 @@ public class DatosVariables {
 
 
     public static ArrayList<DatosVariables> DatosBenetton() {
-        Datos.add(new DatosVariables(23, 0, 0, 0, 651));
-        Datos.add(new DatosVariables(26, 0, 0, 0, 762));
-        Datos.add(new DatosVariables(30, 0, 0, 0, 856));
-        Datos.add(new DatosVariables(34, 0, 0, 0, 1063));
-        Datos.add(new DatosVariables(43, 0, 0, 0, 1190));
-        Datos.add(new DatosVariables(48, 0, 0, 0, 1298));
-        Datos.add(new DatosVariables(52, 0, 0, 0, 1421));
-        Datos.add(new DatosVariables(57, 0, 0, 0, 1440));
-        Datos.add(new DatosVariables(58, 0, 0, 0, 1518));
+        Datos.add(new DatosVariables(23,651));
+        Datos.add(new DatosVariables(26,762));
+        Datos.add(new DatosVariables(30,856));
+        Datos.add(new DatosVariables(34,1063));
+        Datos.add(new DatosVariables(43,1190));
+        Datos.add(new DatosVariables(48,1298));
+        Datos.add(new DatosVariables(52,1421));
+        Datos.add(new DatosVariables(57,1440));
+        Datos.add(new DatosVariables(58,1518));
 
         return Datos;
     }
@@ -198,33 +198,33 @@ public class DatosVariables {
 
     public static ArrayList<DatosVariables> Polynomial(){
 
-        Datos.add(new DatosVariables(1, 108, 95));
-        Datos.add(new DatosVariables(1, 115, 96));
-        Datos.add(new DatosVariables(1, 106, 95));
-        Datos.add(new DatosVariables(1, 97, 97));
-        Datos.add(new DatosVariables(1, 95, 93));
-        Datos.add(new DatosVariables(1, 91, 94));
-        Datos.add(new DatosVariables(1, 97, 95));
-        Datos.add(new DatosVariables(1, 83, 93));
-        Datos.add(new DatosVariables(1, 83, 92));
-        Datos.add(new DatosVariables(1, 78, 86));
-        Datos.add(new DatosVariables(1, 54, 73));
-        Datos.add(new DatosVariables(1, 67, 80));
-        Datos.add(new DatosVariables(1, 56, 65));
-        Datos.add(new DatosVariables(1, 53, 69));
-        Datos.add(new DatosVariables(1, 61, 77));
-        Datos.add(new DatosVariables(1, 115, 96));
-        Datos.add(new DatosVariables(1, 81, 87));
-        Datos.add(new DatosVariables(1, 78, 89));
-        Datos.add(new DatosVariables(1, 30, 60));
-        Datos.add(new DatosVariables(1, 45, 63));
-        Datos.add(new DatosVariables(1, 99, 95));
-        Datos.add(new DatosVariables(1, 32, 61));
-        Datos.add(new DatosVariables(1, 25, 55));
-        Datos.add(new DatosVariables(1, 28, 56));
-        Datos.add(new DatosVariables(1, 90, 94));
-        Datos.add(new DatosVariables(1, 89, 93));
-
+        Datos.add(new DatosVariables(108,95));
+        Datos.add(new DatosVariables(115,96));
+        Datos.add(new DatosVariables(106,95));
+        Datos.add(new DatosVariables(97,97));
+        Datos.add(new DatosVariables(95,93));
+        Datos.add(new DatosVariables(91,94));
+        Datos.add(new DatosVariables(97,95));
+        Datos.add(new DatosVariables(83,93));
+        Datos.add(new DatosVariables(83,92));
+        Datos.add(new DatosVariables(78,86));
+        Datos.add(new DatosVariables(54,73));
+        Datos.add(new DatosVariables(67,80));
+        Datos.add(new DatosVariables(56,65));
+        Datos.add(new DatosVariables(53,69));
+        Datos.add(new DatosVariables(61,77));
+        Datos.add(new DatosVariables(115,96));
+        Datos.add(new DatosVariables(81,87));
+        Datos.add(new DatosVariables(78,89));
+        Datos.add(new DatosVariables(30,60));
+        Datos.add(new DatosVariables(45,63));
+        Datos.add(new DatosVariables(99,95));
+        Datos.add(new DatosVariables(32,61));
+        Datos.add(new DatosVariables(25,55));
+        Datos.add(new DatosVariables(28,56));
+        Datos.add(new DatosVariables(90,94));
+        Datos.add(new DatosVariables(89,93));
+        
         return Datos;
     }
 

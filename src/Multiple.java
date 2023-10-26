@@ -31,7 +31,6 @@ public class Multiple{
 
         double [][] MatrizX = new double[Filas][Columns];
         double [][] MatrizY = new double[Filas][1];
-        double [][] TranspuestaX = new double[MatrizX[0].length][MatrizX.length];
 
         if (Columns == 4){
             for (int i = 0; i < Filas; i++) {
@@ -52,89 +51,47 @@ public class Multiple{
         }
 
         System.out.println("Matriz X: ");
-        ImprimirMatriz(MatrizX);
+        Ecuaciones.ImprimirMatriz(MatrizX);
         System.out.println("\nMatriz Y: ");
-        ImprimirMatriz(MatrizY);
+        Ecuaciones.ImprimirMatriz(MatrizY);
 
-        for (int i = 0; i < Filas; i++) {
-            for (int j = 0; j < MatrizX[0].length; j++) {
-                TranspuestaX[j][i] = MatrizX[i][j];
-            }
-        }
-
+        double [][] TranspuestaX = Ecuaciones.Transpuesta(MatrizX);
         System.out.println("\nMatriz Transpuesta de X: ");
-        ImprimirMatriz(TranspuestaX);
+        Ecuaciones.ImprimirMatriz(TranspuestaX);
 
         System.out.println("\nMultiplicacion de matrices: ");
-        double[][] MultTransMX = MultMatrices(TranspuestaX, MatrizX);
-        ImprimirMatriz(MultTransMX);
+        double[][] MultTransMX = Ecuaciones.MultMatrices(TranspuestaX, MatrizX);
+        Ecuaciones.ImprimirMatriz(MultTransMX);
 
         //Calcular la matriz Aumentada mediante Gauss Jordan
-
-        double MatrizAumentada[][]= new double[MultTransMX.length][MultTransMX.length*2];
-        double[][] MatrizExtra = new double[MultTransMX.length][MultTransMX.length];
-        
-        for (int i = 0; i < MultTransMX.length; i++) {
-            MatrizExtra[i][i] = 1.0;
-        }
-
-        for (int i = 0; i < MultTransMX.length; i++) {
-            for (int j = 0; j < MultTransMX.length; j++) {
-                MatrizAumentada[i][j] = MultTransMX[i][j];
-                MatrizAumentada[i][j + MultTransMX.length] = MatrizExtra[i][j];
-            }
-        }
-
+        double MatrizAumentada[][]= Ecuaciones.CalcAumentada(MultTransMX);
         System.out.println("\nMatriz Aumentada:\n");
-        ImprimirMatriz(MatrizAumentada);
-
-        //Calcular la matriz Inversa, tomando los valores dentro de la MatrizAumentada
-        double MatrizInversa[][]=new double[MultTransMX.length][MultTransMX.length];
-
-        for(int i=0; i < MatrizAumentada.length; i++){
-            double Carreado = MatrizAumentada[i][i];
-
-            for(int j=0; j < MatrizAumentada.length*2; j++){
-                MatrizAumentada[i][j] /= Carreado;
-            }
-
-            for(int k=0; k < MatrizAumentada.length; k++){
-                if(k!=i){
-                    double FactorSoltante = MatrizAumentada[k][i];
-                    for (int j=0; j < MatrizAumentada.length*2; j++){
-                        MatrizAumentada[k][j] -= FactorSoltante * MatrizAumentada[i][j];
-                    }
-
-                }
-            }
-        }
-
+        Ecuaciones.ImprimirMatriz(MatrizAumentada);
+        Ecuaciones.GussJordan(MatrizAumentada);
         System.out.println("\nMatriz Aumentada Gauss Jordan: \n");
-        ImprimirMatriz(MatrizAumentada);
+        Ecuaciones.ImprimirMatriz(MatrizAumentada);
 
         //Se pasan los valores de la Matriz Aumentada sobrante a la Matriz Inversa
-        for (int i=0; i< MatrizAumentada.length; i++){
-            for (int j=0; j < MatrizAumentada.length; j++){
-                MatrizInversa[i][j] = MatrizAumentada[i][j + MultTransMX.length];
-            }
-        }
-
+        double MatrizInversa[][]= Ecuaciones.CalcMatrizInversa(MatrizAumentada,MultTransMX);
         System.out.println("\nMatriz Inversa (X*X^T)^-1: \n");
-        ImprimirMatriz(MatrizInversa);
+        Ecuaciones.ImprimirMatriz(MatrizInversa);
 
         System.out.println("\nX^T*Y: \n");
-        double [][] MultTransY = MultMatrices(TranspuestaX, MatrizY);
-        ImprimirMatriz(MultTransY);
+        double [][] MultTransY = Ecuaciones.MultMatrices(TranspuestaX, MatrizY);
+        Ecuaciones.ImprimirMatriz(MultTransY);
 
         System.out.println("\n(X^T * X)^-1) X^T * Y: \n");
-        double [][] MultFinal = MultMatrices(MatrizInversa, MultTransY);
-        ImprimirMatriz(MultFinal);
+        double [][] MultFinal = Ecuaciones.MultMatrices(MatrizInversa, MultTransY);
+        Ecuaciones.ImprimirMatriz(MultFinal);
+
 
         if (MultFinal.length == 4) {
             double B0 = MultFinal[0][0];
             double B1 = MultFinal[1][0];
             double B2 = MultFinal[2][0];
             double B3 = MultFinal[3][0];
+
+            System.out.println("\nEcuacion: " + B0 +" + "+ B1 +" * x1 + "+ B2 + " * x2 +" + B3 + "* x3" );
 
             double resultado = 0;
             System.out.println("\nSimulacion:");
@@ -150,6 +107,8 @@ public class Multiple{
             double B1 = MultFinal[1][0];
             double B2 = MultFinal[2][0];
 
+            System.out.println("\nEcuacion: " + B0 +" + "+ B1 +" * x1 + "+ B2 + " * x2");
+
             double resultado = 0;
             System.out.println("\nSimulacion: ");
             resultado = B0 + B1 * 34 + B2 * 87;
@@ -162,34 +121,5 @@ public class Multiple{
         }
     }
 
-    public static void ImprimirMatriz(double[][] Matriz) {
-        for (int i = 0; i < Matriz.length; i++) {
-            for (int j = 0; j < Matriz[i].length; j++) {
-                System.out.printf("%.15f\t", Matriz[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
-    public static double[][] MultMatrices(double[][] PrMatriz, double[][] ScMatriz) {
-        int FilasPrM = PrMatriz.length, ColumnsPrM = PrMatriz[0].length, FilasScM = ScMatriz.length, ColumnsScM = ScMatriz[0].length;
-
-        if (ColumnsPrM != FilasScM) {
-            throw new IllegalArgumentException("ERROR. DATOS NO SON VALIDOS.");
-        }
-        double[][] MultMatrizXTX = new double[FilasPrM][ColumnsScM];
-
-        for (int i = 0; i < FilasPrM; i++) {
-            for (int j = 0; j < ColumnsScM; j++) {
-                double SumaTotal = 0;
-                for (int k = 0; k < ColumnsPrM; k++) {
-                    SumaTotal += PrMatriz[i][k] * ScMatriz[k][j];
-                }
-
-                MultMatrizXTX[i][j] = SumaTotal;
-            }
-        }
-        return MultMatrizXTX;
-    }
-
 }
+

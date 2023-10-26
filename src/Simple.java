@@ -53,13 +53,4 @@ public class Simple {
 
     }
 
-    public static void ImprimirMatriz(double[][] Matriz) {
-        for (int i = 0; i < Matriz.length; i++) {
-            for (int j = 0; j < Matriz[i].length; j++) {
-                System.out.printf("%.15f\t", Matriz[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
 }
