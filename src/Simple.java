@@ -8,11 +8,12 @@ public class Simple {
     public static void main(String[] args) {
         int a = 1;
 
+        //Cambiar DataSets
         if (a == 1){
-            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.DatosBenetton());
             OPERATIONS(Datos);
         }else {
-            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Chemical());
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50StartUps());
             OPERATIONS(Datos);
         }
     }
@@ -22,6 +23,8 @@ public class Simple {
         double sumadorx = 0, sumadory = 0, multxy = 0, multx = 0, B0 = 0, B1 = 0, totalmultxy = 0 , totalmultx = 0, calc = 0;
 
         for (DatosVariables p : Datos){
+
+            //Calcular los datos de la ecuacion
             sumadorx += p.x;
             sumadory += p.y;
             multxy = p.x * p.y;
@@ -30,10 +33,12 @@ public class Simple {
             totalmultx += multx;
         }
 
+        //Calular Pendiente y Intercepto
+        System.out.println("\nFormula Pendiente : ("+totalmultxy+"-(("+sumadorx+"*"+sumadory+")/"+Datos.size()+"))/(("+totalmultx+")-("+sumadorx+"*"+sumadorx+")/"+Datos.size()+")");
         B1 = (totalmultxy - ((sumadorx * sumadory)/ Datos.size())) / ((totalmultx) - (sumadorx*sumadorx)/ Datos.size());
+        System.out.println("Pendiente: " + B1);
+        System.out.println("Forumla Intercepto: (("+sumadory+")/"+Datos.size()+")-("+B1+"*("+sumadorx+"/"+Datos.size()+"))");
         B0 = ((sumadory)/ Datos.size())-(B1 * (sumadorx/ Datos.size()));
-
-        System.out.println("\nPendiente: " + B1);
         System.out.println("Intercepto: " + B0 + "\n");
 
         for (DatosVariables p: Datos){
@@ -46,6 +51,15 @@ public class Simple {
         System.out.println("2. X = 651 : Simulacion: " + (B0 + B1 * 651));
         System.out.println("3. X = 35  : Simulacion: " + (B0 + B1 * 35));
 
+    }
+
+    public static void ImprimirMatriz(double[][] Matriz) {
+        for (int i = 0; i < Matriz.length; i++) {
+            for (int j = 0; j < Matriz[i].length; j++) {
+                System.out.printf("%.15f\t", Matriz[i][j]);
+            }
+            System.out.println();
+        }
     }
 
 }

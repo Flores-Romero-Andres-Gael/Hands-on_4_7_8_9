@@ -12,7 +12,7 @@ public class Polynomial {
 
     public static void OPERATIONS (ArrayList<DatosVariables> Datos) {
         double SumX = 0, SumY = 0, MultXY = 0, MultX2 = 0,MultX3 = 0, MultX4 = 0, MultXXY = 0;
-        int Filas = Datos.size(), Polynomios = 2, Num = Datos.size();
+        int Filas = Datos.size(), Num = Datos.size();
 
         double[][] MatrizDatos = new double[Filas][3];
         double[][] MatrizX = new double[3][3];
@@ -22,6 +22,7 @@ public class Polynomial {
             double X = p.x1;
             double y = p.y;
 
+            //Calcular los datos de la ecuacion
             SumX += X;
             SumY += y;
             MultXY += X * y;
@@ -32,13 +33,12 @@ public class Polynomial {
 
         }
 
-        for (int i = 0; i < Filas; i++) {
+        /*for (int i = 0; i < Filas; i++) {
             MatrizDatos[i][0] = Datos.get(i).x;
             MatrizDatos[i][1] = Datos.get(i).x1;
             MatrizDatos[i][2] = Datos.get(i).y;
         }
-
-        //ImprimirMatriz(MatrizDatos);
+        ImprimirMatriz(MatrizDatos);*/
 
         //Matriz X
         MatrizX[0][0] = MultX4;

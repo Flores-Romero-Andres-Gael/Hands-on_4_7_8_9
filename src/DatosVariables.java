@@ -8,7 +8,6 @@ public class DatosVariables {
     public static ArrayList<DatosVariables> Datos = new ArrayList<>();
     double x, x1, x2, x3, y;
 
-    //Simple Linear Progression - Multiple
     public DatosVariables(double x, double x1, double x2, double x3, double y){
         this.x = x;
         this.x1 = x1;
@@ -16,6 +15,7 @@ public class DatosVariables {
         this.x3 = x3;
         this.y = y;
     }
+
 
     public DatosVariables(double x, double x1, double x2, double y){
         this.x = x;

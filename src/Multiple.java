@@ -8,6 +8,7 @@ public class Multiple{
     public static void main(String[] args) {
         int a = 1;
 
+        //Cambiar DataSets
         if (a == 1){
             ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
             OPERATIONS(Datos, a);
@@ -20,7 +21,7 @@ public class Multiple{
 
     public static void OPERATIONS(ArrayList<DatosVariables> Datos, int flag){
         int Filas = Datos.size();
-        int Columns = 0;
+        int Columns;
 
         if(flag==1){
             Columns = 4;
@@ -68,6 +69,8 @@ public class Multiple{
         double[][] MultTransMX = MultMatrices(TranspuestaX, MatrizX);
         ImprimirMatriz(MultTransMX);
 
+        //Calcular la matriz Aumentada mediante Gauss Jordan
+
         double MatrizAumentada[][]= new double[MultTransMX.length][MultTransMX.length*2];
         double[][] MatrizExtra = new double[MultTransMX.length][MultTransMX.length];
         
@@ -85,6 +88,7 @@ public class Multiple{
         System.out.println("\nMatriz Aumentada:\n");
         ImprimirMatriz(MatrizAumentada);
 
+        //Calcular la matriz Inversa, tomando los valores dentro de la MatrizAumentada
         double MatrizInversa[][]=new double[MultTransMX.length][MultTransMX.length];
 
         for(int i=0; i < MatrizAumentada.length; i++){
@@ -108,6 +112,7 @@ public class Multiple{
         System.out.println("\nMatriz Aumentada Gauss Jordan: \n");
         ImprimirMatriz(MatrizAumentada);
 
+        //Se pasan los valores de la Matriz Aumentada sobrante a la Matriz Inversa
         for (int i=0; i< MatrizAumentada.length; i++){
             for (int j=0; j < MatrizAumentada.length; j++){
                 MatrizInversa[i][j] = MatrizAumentada[i][j + MultTransMX.length];
@@ -132,7 +137,7 @@ public class Multiple{
             double B3 = MultFinal[3][0];
 
             double resultado = 0;
-            System.out.println("\nSimulacion: \n");
+            System.out.println("\nSimulacion:");
             resultado = B0 + B1 * 34 + B2 * 87 + B3 * 103;
             System.out.println("\nEjemplos: x1 = 34, x2 = 87, x3 = 103 \nResultado: " + resultado);
             resultado = B0 + B1 * 89 + B2 * 401 + B3 * 13;

@@ -18,13 +18,14 @@ public class Quadratic {
             double X = p.x;
             double y = p.y;
 
+            //Calcular los datos de la ecuacion
             SumX += X;
             SumY += y;
             MultXY += X * y;
             MultX2 += X * X;
             MultX3 += X * X * X;
             MultX4 += X * X * X * X;
-            MultXXY += X*X * y ;
+            MultXXY += X * X * y ;
 
         }
 
