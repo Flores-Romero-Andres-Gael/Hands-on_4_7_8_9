@@ -23,27 +23,33 @@ public class Polynomial {
         System.out.println("\nMatriz Y:");
         Ecuaciones.ImprimirMatriz(MatrizY);
 
+        //Calcular la Transpuesta X
         double [][] TranspuestaX = Ecuaciones.Transpuesta(MatrizX);
         System.out.println("\nMatriz Transpuesta de X: ");
         Ecuaciones.ImprimirMatriz(TranspuestaX);
 
+        //Multiplicar Transpuesta X por MatrizX
         double[][] MultTransMX = Ecuaciones.MultMatrices(TranspuestaX, MatrizX);
         System.out.println("\nMultiplicacion de matrices: ");
         Ecuaciones.ImprimirMatriz(MultTransMX);
 
+        //Calcular la matriz aumentada y realizar GaussJordan
         double MatrizAumentada[][]= Ecuaciones.CalcAumentada(MultTransMX);
         System.out.println("\nMatriz Aumentada:\n");
         Ecuaciones.ImprimirMatriz(MatrizAumentada);
         Ecuaciones.GussJordan(MatrizAumentada);
 
+        //Calcular Inversa
         double MatrizInversa[][] = Ecuaciones.CalcMatrizInversa(MatrizAumentada, MultTransMX);
         System.out.println("\nMatriz Inversa (X*X^T)^-1: \n");
         Ecuaciones.ImprimirMatriz(MatrizInversa);
 
+        //Calcular TranspuestaX por MatrizY
         System.out.println("\nX^T*Y: \n");
         double [][] MultTransY = Ecuaciones.MultMatrices(TranspuestaX, MatrizY);
         Ecuaciones.ImprimirMatriz(MultTransY);
 
+        //Caluclar
         System.out.println("\n(X^T * X)^-1) X^T * Y: \n");
         double [][] MultFinal = Ecuaciones.MultMatrices(MatrizInversa, MultTransY);
         Ecuaciones.ImprimirMatriz(MultFinal);
@@ -54,7 +60,7 @@ public class Polynomial {
         double resultado = 0, x = 0;
 
 
-        System.out.println("\nEcuacion: " + B0 + "X^2 + " + B1 + "X + " + B2);
+        System.out.println("Ecuacion:\nY = " + B0 + "X^2 + " + B1 + "X + " + B2);
 
         System.out.println("\nSimulacion:");
         x = 15;

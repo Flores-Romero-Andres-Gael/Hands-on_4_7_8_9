@@ -24,7 +24,7 @@ public class Quadratic {
         double B1 = MatrizX[1][3];
         double B2 = MatrizX[2][3];
 
-        System.out.println("\nEcuacion: Y = B0x^2 * B1x + B2");
+        System.out.println("\nEcuacion:\nY = B0x^2 * B1x + B2");
         System.out.println("Resultado: " + BO + "x^2 * " + B1 + "x + " + B2 );
 
         double resultado = 0;

@@ -228,6 +228,28 @@ public class DatosVariables {
         return Datos;
     }
 
+    public static ArrayList<DatosVariables> A(){
+
+        Datos.add(new DatosVariables(1,2, 3));
+        Datos.add(new DatosVariables(2,4, 6));
+        Datos.add(new DatosVariables(3,6, 9));
+        Datos.add(new DatosVariables(4,8, 12));
+        Datos.add(new DatosVariables(5,10, 15));
+        Datos.add(new DatosVariables(6,12, 18));
+        Datos.add(new DatosVariables(7,14, 21));
+        Datos.add(new DatosVariables(8,16, 24));
+        Datos.add(new DatosVariables(9,18, 27));
+        Datos.add(new DatosVariables(10,20, 30));
+        Datos.add(new DatosVariables(11,22, 33));
+        Datos.add(new DatosVariables(12,24,36));
+        Datos.add(new DatosVariables(13,26, 39));
+        Datos.add(new DatosVariables(14,28, 42));
+        Datos.add(new DatosVariables(15,30, 45));
+        Datos.add(new DatosVariables(16,32, 48));
+        Datos.add(new DatosVariables(17,34, 51));
+
+        return Datos;
+    }
 
 }
    

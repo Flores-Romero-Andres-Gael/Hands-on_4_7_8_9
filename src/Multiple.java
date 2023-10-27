@@ -1,19 +1,20 @@
 // Flores Romero Andres Gael
 // Multiple Linear Regression
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Multiple{
 
     public static void main(String[] args) {
-        int a = 1;
+        int a = 0;
 
         //Cambiar DataSets
         if (a == 1){
             ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50SUMult());
             OPERATIONS(Datos, a);
         }else {
-            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Chemical());
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.A());
             OPERATIONS(Datos, a);
         }
 
@@ -91,7 +92,7 @@ public class Multiple{
             double B2 = MultFinal[2][0];
             double B3 = MultFinal[3][0];
 
-            System.out.println("\nEcuacion: " + B0 +" + "+ B1 +" * x1 + "+ B2 + " * x2 +" + B3 + "* x3" );
+            System.out.println("Ecuacion:\n Y = " + B0 +" + "+ B1 +" * x1 + "+ B2 + " * x2 +" + B3 + "* x3" );
 
             double resultado = 0;
             System.out.println("\nSimulacion:");

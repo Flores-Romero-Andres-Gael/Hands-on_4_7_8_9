@@ -10,7 +10,7 @@ public class Simple {
 
         //Cambiar DataSets
         if (a == 1){
-            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.DatosBenetton());
+            ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.A());
             OPERATIONS(Datos);
         }else {
             ArrayList<DatosVariables> Datos = new ArrayList<>(DatosVariables.Datos50StartUps());
@@ -45,8 +45,8 @@ public class Simple {
             calc = B0 + B1 * p.x;
             System.out.println("Simulacion: " + calc);
         }
-
-        System.out.println("\nEjemplos:\nFormula: y = B0 + B1(x)");
+        System.out.println("Ecuacion:\ny = B0 + B1(x)");
+        System.out.println("Ejemplos:");
         System.out.println("1. X = 143 : Simulacion: " + (B0 + B1 * 143));
         System.out.println("2. X = 651 : Simulacion: " + (B0 + B1 * 651));
         System.out.println("3. X = 35  : Simulacion: " + (B0 + B1 * 35));
