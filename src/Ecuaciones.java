@@ -1,3 +1,5 @@
+import DataSets.DatosVariables;
+
 import java.util.ArrayList;
 
 public class Ecuaciones {

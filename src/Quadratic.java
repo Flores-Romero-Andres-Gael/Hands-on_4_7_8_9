@@ -1,6 +1,8 @@
 // Flores Romero Andres Gael
 // Quadratic Regression
 
+import DataSets.DatosVariables;
+
 import java.util.ArrayList;
 
 public class Quadratic {

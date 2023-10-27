@@ -1,4 +1,4 @@
-// Flores Romero Andres Gael
+package DataSets;// Flores Romero Andres Gael
 // Datos de las Clases
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class DatosVariables {
     
     public static ArrayList<DatosVariables> Datos = new ArrayList<>();
-    double x, x1, x2, x3, y;
+    public double x, x1, x2, x3, y;
 
     public DatosVariables(double x, double x1, double x2, double x3, double y){
         this.x = x;

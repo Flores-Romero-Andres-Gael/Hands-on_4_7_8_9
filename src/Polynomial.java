@@ -1,6 +1,8 @@
 // Flores Romero Andres Gael
 // Polynomial Regression
 
+import DataSets.DatosVariables;
+
 import java.util.ArrayList;
 
 public class Polynomial {

@@ -1,6 +1,8 @@
 // Flores Romero Andres Gael
 // Simple Linear Regression
 
+import DataSets.DatosVariables;
+
 import java.util.ArrayList;
 
 public class Simple {

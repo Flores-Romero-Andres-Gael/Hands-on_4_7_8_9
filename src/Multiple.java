@@ -1,7 +1,8 @@
 // Flores Romero Andres Gael
 // Multiple Linear Regression
 
-import java.math.BigDecimal;
+import DataSets.DatosVariables;
+
 import java.util.ArrayList;
 
 public class Multiple{
