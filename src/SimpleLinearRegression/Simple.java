@@ -1,5 +1,5 @@
-// Flores Romero Andres Gael
-// Simple Linear Regression
+package SimpleLinearRegression;// Flores Romero Andres Gael
+// SimpleLinearRegression.Simple Linear Regression
 
 import DataSets.DatosVariables;
 

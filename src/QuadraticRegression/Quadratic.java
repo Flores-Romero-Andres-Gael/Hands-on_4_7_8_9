@@ -1,7 +1,8 @@
-// Flores Romero Andres Gael
-// Quadratic Regression
+package QuadraticRegression;// Flores Romero Andres Gael
+// QuadraticRegression.Quadratic Regression
 
 import DataSets.DatosVariables;
+import EcuacionesALL.Ecuaciones;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,8 @@
-// Flores Romero Andres Gael
-// Polynomial Regression
+package PolynomialRegression;// Flores Romero Andres Gael
+// PolynomialRegression.Polynomial Regression
 
 import DataSets.DatosVariables;
+import EcuacionesALL.Ecuaciones;
 
 import java.util.ArrayList;
 

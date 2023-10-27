@@ -1,7 +1,8 @@
-// Flores Romero Andres Gael
-// Multiple Linear Regression
+package MultipleRegression;// Flores Romero Andres Gael
+// MultipleRegression.Multiple Linear Regression
 
 import DataSets.DatosVariables;
+import EcuacionesALL.Ecuaciones;
 
 import java.util.ArrayList;
 

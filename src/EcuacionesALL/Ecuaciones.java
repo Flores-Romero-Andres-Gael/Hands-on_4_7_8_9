@@ -1,3 +1,5 @@
+package EcuacionesALL;
+
 import DataSets.DatosVariables;
 
 import java.util.ArrayList;
